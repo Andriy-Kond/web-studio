@@ -1,0 +1,42 @@
+/* Секція */
+.section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @media screen and (min-width: $desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+    }
+}
+
+.section__title {
+    margin-bottom: 30px;
+
+    font-weight: 700;
+    text-align: center;
+    color: var(--brand-black);
+    font-size: 28px;
+    line-height: 1.18;
+
+    @media screen and (min-width: $desktop) {
+    margin-bottom: 50px;
+
+    font-size: 36px;
+    line-height: 1.16;
+    }
+}
+
+.section--null-padding-top {
+    padding-top: 0;
+}
+
+.section--bg-grey {
+    background-color: var(--brand-bg-grey);
+}
+
+.section--hidden {
+    @media screen and (max-width: ($desktop - 1px)) {
+        display: none;
+    }
+}
+/* /Секція */

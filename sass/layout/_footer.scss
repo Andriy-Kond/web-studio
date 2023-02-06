@@ -1,0 +1,178 @@
+/* ========== FOOTER ========== */
+.footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    background-color: var(--brand-bg-color);
+}
+
+// Вирівнювання блоків у футері
+.container__footer {
+
+
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: baseline;
+    }
+
+    @media screen and (max-width: ($desktop - 1px)) {
+        // align-items: baseline;
+        text-align: center;
+    }
+
+    @media screen and (min-width: $desktop) {
+        flex-wrap: nowrap;
+        // justify-content: space-between;
+        // display: inline-block;
+    }
+
+}
+
+.footer__box {
+    @media screen and (max-width: ($tablet - 1px)) {
+        &:not(:last-child) {
+            margin-bottom: 60px;
+        }
+    }
+}
+
+.footer__box--contacts {
+    @media screen and (min-width: $desktop) {
+        width: 231px;
+    }
+}
+
+.footer__box--socials {
+    @media screen and (min-width: $desktop) {
+        margin-left: 70px;
+    }
+}
+
+.footer__box--subscribe {
+    @media screen and (min-width: $tablet) and (max-width: ($desktop - 1px)) {
+        margin-top: 60px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        display: flex;
+        align-items: flex-end;
+        margin-left: 93px;
+    }
+}
+
+
+// .footer__label {
+//     display: flex;
+//     flex-direction: column;
+// }
+
+
+// Лого у футері
+.footer__logo {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.footer__title {
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--simple-white);
+
+
+}
+
+
+
+// .footer__subscribe-field {
+//     display: block;
+
+//     @media screen and (min-width: $tablet) {
+//         display: flex;
+//         flex-direction: column;
+//     }
+
+//     @media screen and (max-width: ($tablet - 1px)) {
+//         margin-bottom: 20px;
+//     }
+// }
+
+.footer__btn {
+    @media screen and (min-width: $desktop) {
+        margin: 0;
+        margin-left: 12px;
+    }
+}
+
+.footer__subscribe-box {
+    @media screen and (max-width: ($desktop - 1px)) {
+        margin-bottom: 20px;
+    }
+}
+
+.footer__subscribe-input {
+    height: 50px;
+    width: calc(100% - 30px);
+    padding: 15px 16px;
+
+    background-color: var(--brand-bg-color);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+
+    color: var(--simple-white);
+
+    &::placeholder {
+        font-size: 16px;
+        line-height: 1.25;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    @media screen and (min-width: $tablet) {
+        width: 450px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 358px;
+    }
+}
+
+.address {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.71;
+
+}
+
+.address__item:not(:last-child) {
+    margin-bottom: 8px;
+
+    @media screen and (min-with: $desktop) {
+        margin-bottom: 9px;
+    }
+}
+
+.address__link {
+    color: var(--simple-white);
+    transition: color var(--transition);
+
+    /* * «С5» Текст контактів в !хедері! і !футері! змінює колір при ховері і фокусі. */
+    /* .address__link--contact:hover,
+.address__link--contact:focus, */
+    &:hover,
+    &:focus {
+        color: var(--brand-main-color);
+    }
+}
+
+.address__link--contact {
+    color: rgba(255, 255, 255, 0.6);
+    /* transition: color var(--transition); */
+}
+
+/* ========== /FOOTER ========== */

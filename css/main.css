@@ -1,0 +1,1947 @@
+@charset "UTF-8";
+/* todo переробити іконки, щоб вони автоматично стискались між собою на маленьких екранах */
+/* todo Мають бути Радіо-кнопки */
+/* todo автофокус на полі у подалці - через JS*/
+/* ========== ЗМІННІ ========== */
+:root {
+  --brand-main-color: #2196f3;
+  --brand-bg-color: #2F303A;
+  --brand-black: #212121;
+  --brand-grey: #757575;
+  --brand-bg-grey: #F5F4FA;
+  --btn-hover-color: #188CE8;
+  --icons-grey: #AFB1B8;
+  --logo-positive-color: #000;
+  --logo-negative-color: #fff;
+  --simple-white: #fff;
+  --brand-font: "Roboto";
+  --brand-letter-spacing: 0.03em;
+  --brand-logo-font: "Raleway";
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========== /ЗМІННІ ========== */
+/*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+/*
+Document
+========
+*/
+/**
+Use a better box model (opinionated).
+*/
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/**
+1. Correct the line height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size (opinionated).
+*/
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+}
+
+/*
+Sections
+========
+*/
+/**
+1. Remove the margin in all browsers.
+2. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+*/
+body {
+  margin: 0;
+  /* 1 */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  /* 2 */
+}
+
+/*
+Grouping content
+================
+*/
+/**
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+*/
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+}
+
+/*
+Text-level semantics
+====================
+*/
+/**
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+abbr[title] {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/**
+Add the correct font weight in Edge and Safari.
+*/
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+Tabular data
+============
+*/
+/**
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+}
+
+/*
+Forms
+=====
+*/
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+button,
+select {
+  text-transform: none;
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+Remove the inner border and padding in Firefox.
+*/
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+Restore the focus styles unset by the previous rule.
+*/
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+Remove the additional ':invalid' styles in Firefox.
+See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+*/
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+legend {
+  padding: 0;
+}
+
+/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+progress {
+  vertical-align: baseline;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Interactive
+===========
+*/
+/*
+Add the correct display in Chrome and Safari.
+*/
+summary {
+  display: list-item;
+}
+
+/* ========== СКИДАННЯ СТИЛІВ ==========  */
+body {
+  background-color: var(--simple-white);
+  font-family: var(--brand-font), sans-serif;
+  letter-spacing: var(--brand-letter-spacing);
+  color: var(--brand-grey);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Знімаю стилізацію з ul */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Знімаю стилізацію з <a> */
+a {
+  text-decoration: none;
+}
+
+/* Заборона зміну розміру в textarea */
+textarea {
+  resize: none;
+}
+
+button {
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* ========== /СКИДАННЯ СТИЛІВ ========== */
+/* === Кнопка основна === */
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  width: calc(100vw - 30px);
+  max-width: 200px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 4px;
+  border: transparent;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: var(--simple-white);
+  background-color: var(--brand-main-color);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  -webkit-transition: background-color var(--transition);
+  transition: background-color var(--transition);
+}
+.btn:hover, .btn:focus {
+  background-color: var(--btn-hover-color);
+}
+
+.btn__subscribe-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  margin-left: 10px;
+}
+
+/* === /Кнопка основна === */
+/* === Кнопка закриття зверху праворуч === */
+.btn-close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--simple-white);
+  -webkit-transition: background-color var(--transition), color var(--transition);
+  transition: background-color var(--transition), color var(--transition);
+}
+.btn-close:hover, .btn-close:focus {
+  color: var(--brand-main-color);
+}
+
+.btn-close__icon {
+  fill: currentColor;
+  width: 18px;
+  height: 18px;
+  background-position: 50% 50%;
+  background-origin: border-box;
+}
+
+.btn-mobile {
+  z-index: 2;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  border: 0;
+}
+@media screen and (min-width: 768px) {
+  .btn-mobile {
+    display: none;
+  }
+}
+
+.btn-mobile.is-open {
+  position: absolute;
+  right: max(15px, (100vw - 480px) / 2 + 15px);
+}
+
+.btn-mobile .icon-close {
+  display: none;
+}
+
+.btn-mobile.is-open .icon-close {
+  display: block;
+}
+
+.btn-mobile.is-open .icon-open {
+  display: none;
+}
+
+.btn-mobile__icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--simple-white);
+}
+
+/* === /Кнопка закриття зверху праворуч === */
+/* Контейнер */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
+
+/* Секція */
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+@media screen and (min-width: 1200px) {
+  .section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
+.section__title {
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--brand-black);
+  font-size: 28px;
+  line-height: 1.18;
+}
+@media screen and (min-width: 1200px) {
+  .section__title {
+    margin-bottom: 50px;
+    font-size: 36px;
+    line-height: 1.16;
+  }
+}
+
+.section--null-padding-top {
+  padding-top: 0;
+}
+
+.section--bg-grey {
+  background-color: var(--brand-bg-grey);
+}
+
+@media screen and (max-width: 1199px) {
+  .section--hidden {
+    display: none;
+  }
+}
+
+/* /Секція */
+/* Хідден */
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  margin: -1px;
+}
+
+/* .visually-hidden {
+    position: fixed;
+    transform: scale(0);
+} */
+/* /Хідден */
+/* /Стилізація logo */
+.logo {
+  display: block;
+  font-family: var(--brand-logo-font), sans-serif;
+  font-weight: 700;
+  color: var(--brand-main-color);
+  font-size: 24px;
+  line-height: 1.16;
+}
+@media screen and (min-width: 1200px) {
+  .logo {
+    font-size: 26px;
+    line-height: 1.19;
+  }
+}
+
+.logo__dark {
+  color: var(--logo-positive-color);
+}
+
+.logo__light {
+  color: var(--logo-negative-color);
+}
+
+/* /Стилізація logo */
+/* === Соціальні мережі === */
+.socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.socials__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.socials__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  color: var(--icons-grey);
+  background-color: var(--simple-white);
+  -webkit-transition: background-color var(--transition), color var(--transition);
+  transition: background-color var(--transition), color var(--transition);
+}
+.socials__link:hover, .socials__link:focus {
+  background-color: var(--brand-main-color);
+  color: var(--simple-white);
+}
+
+.socials__icon {
+  fill: currentColor;
+  width: 20px;
+  height: 20px;
+}
+
+.socials__link--footer-colorize {
+  color: var(--simple-white);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.socials-mobile-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+@media screen and (min-width: 768px) {
+  .socials-mobile-menu {
+    display: none;
+  }
+}
+
+.socials-mobile-menu__item:not(:last-child) {
+  margin-right: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+  padding-right: 10px;
+}
+
+.socials-mobile-menu__link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  color: var(--icons-grey);
+  -webkit-transition: color var(--transition);
+  transition: color var(--transition);
+  color: var(--brand-main-color);
+}
+
+.socials-mobile-menu__vertical-line {
+  width: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 10px;
+}
+
+/* === /Соціальні мережі === */
+/* todo Закріпити хедер */
+/* ========== ВЕРХНІЙ РЯДОК ========== */
+.header {
+  border-bottom: 1px solid #ECECEC;
+}
+
+/* навігація (flex для лого+меню)*/
+.nav {
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.nav.is-open {
+  position: static;
+}
+
+/* ховер лого по всій площині у заголовку */
+.nav__logo {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  .nav__logo {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+}
+
+.menu-container {
+  z-index: 1;
+  width: 100%;
+  /* === Меню мобільне === */
+  /* === /Меню мобільне === */
+}
+@media screen and (max-width: 767px) {
+  .menu-container {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    padding-left: max(40px, (100vw - 480px) / 2 + 40px);
+    padding-right: max(40px, (100vw - 480px) / 2 + 40px);
+    background-color: var(--simple-white);
+  }
+  .menu-container.is-open {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 87px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .menu-container {
+    margin-left: 92px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.btn-fix {
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .menu__item:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .menu__item:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+.menu__link {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  color: var(--brand-black);
+  -webkit-transition: color var(--transition);
+  transition: color var(--transition);
+}
+@media screen and (min-width: 768px) {
+  .menu__link {
+    position: relative;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-size: 14px;
+    line-height: 1.14;
+    /* Підкреслювання під назвою */
+    /* Поява підкреслювання під назвою по ховеру/фокусу */
+  }
+  .menu__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--brand-main-color);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transition: -webkit-transform var(--transition);
+    transition: -webkit-transform var(--transition);
+    transition: transform var(--transition);
+    transition: transform var(--transition), -webkit-transform var(--transition);
+  }
+  .menu__link:hover::after, .menu__link:focus::after {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/* Підсвічування активної сторінки */
+@media screen and (max-width: 767px) {
+  .menu__link--current {
+    color: var(--brand-main-color);
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu__link--current::after {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/* Контакти в хедері */
+.contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media screen and (max-width: 767px) {
+  .contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin-top: auto;
+    margin-bottom: 64px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.contacts__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .contacts__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .contacts__item:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+@media screen and (max-widh: 1199px) {
+  .contacts__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contacts__item:not(:last-child) {
+    margin-top: 32px;
+  }
+}
+
+.contacts__icon {
+  margin-right: 10px;
+  fill: currentColor;
+}
+@media screen and (max-width: 767px) {
+  .contacts__icon {
+    display: none;
+  }
+}
+
+.contacts__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--brand-grey);
+  -webkit-transition: color var(--transition);
+  transition: color var(--transition);
+}
+
+@media screen and (max-width: 767px) {
+  .contacts__link--tel {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.18;
+    letter-spacing: 0.02em;
+    color: var(--brand-main-color);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contacts__link--email {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.67;
+    letter-spacing: 0.02em;
+  }
+}
+
+.menu__link:hover,
+.menu__link:focus,
+.contacts__link:hover,
+.contacts__link:focus {
+  color: var(--brand-main-color);
+}
+
+/* ========== /ВЕРХНІЙ РЯДОК ========== */
+/* ========== ГЕРОЙ ========== */
+.hero {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 118px;
+  padding-bottom: 118px;
+  text-align: center;
+  /* наслідується до дітей */
+  background-color: var(--brand-bg-color);
+  /* оверлей (поки тільки на герої) */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #C4C4C4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../images/mobile/hero-1x.jpg");
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/mobile/hero-1x.jpg");
+  /* /оверлей (поки тільки на герої) */
+}
+@media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .hero {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../images/mobile/hero-2x.jpg");
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/mobile/hero-2x.jpg");
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../images/tablet/hero-1x.jpg");
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/tablet/hero-1x.jpg");
+  }
+}
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../images/tablet/hero-2x.jpg");
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/tablet/hero-2x.jpg");
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hero {
+    max-width: 1600px;
+    height: 600px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../images/desktop/hero-1x.jpg");
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/desktop/hero-1x.jpg");
+  }
+}
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../images/desktop/hero-2x.jpg");
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/desktop/hero-2x.jpg");
+  }
+}
+
+.hero__title {
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--simple-white);
+  font-size: 26px;
+  line-height: 1.61;
+  text-align: center;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 1200px) {
+  .hero__title {
+    font-size: 44px;
+    line-height: 1.36;
+  }
+}
+
+/* ========== /ГЕРОЙ ========== */
+/* ========== ОСОБЛИВОСТІ ========== */
+@media screen and (min-width: 768px) {
+  .features {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .features__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .features__item {
+    -ms-flex-preferred-size: calc((100% - 30px) / 2);
+        flex-basis: calc((100% - 30px) / 2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .features__item {
+    -ms-flex-preferred-size: calc((100% - 90px) / 4);
+        flex-basis: calc((100% - 90px) / 4);
+  }
+}
+
+.features__icon-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+  background-color: var(--brand-bg-grey);
+  height: 120px;
+}
+
+.features__icon {
+  height: 70px;
+  width: 70px;
+}
+
+.features__title {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--brand-black);
+}
+@media screen and (max-width: 767px) {
+  .features__title {
+    text-align: center;
+  }
+}
+
+.features__text {
+  font-size: 14px;
+  line-height: 1.71;
+  color: var(--brand-grey);
+}
+
+/* ========== /ОСОБЛИВОСТІ ========== */
+/* ========== ЧИМ МИ ЗАЙМАЄМОСЬ ========== */
+.offers {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .offers {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.offers__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.offers__icon-box {
+  position: relative;
+}
+
+.offers__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* padding-top: 27px; */
+  /* padding-bottom: 27px; */
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--simple-white);
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+/* ========== /ЧИМ МИ ЗАЙМАЄМОСЬ ========== */
+/* ========== НАША КОМАНДА ========== */
+@media screen and (min-width: 768px) {
+  .employee {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
+.employee__item {
+  display: block;
+  background-color: var(--simple-white);
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+@media screen and (max-width: 767px) {
+  .employee__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .employee__item {
+    -ms-flex-preferred-size: calc((100% - 30px) / 2);
+        flex-basis: calc((100% - 30px) / 2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .employee__item {
+    -ms-flex-preferred-size: calc((100% - 90px) / 4);
+        flex-basis: calc((100% - 90px) / 4);
+  }
+}
+
+.employee__container {
+  padding-top: 30px;
+  padding-bottom: 24px;
+}
+@media screen and (min-width: 1200px) {
+  .employee__container {
+    padding-bottom: 30px;
+  }
+}
+
+.employee__title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  color: var(--brand-black);
+}
+
+.employee__text {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.19;
+  color: var(--brand-grey);
+}
+
+/* ========== /НАША КОМАНДА ========== */
+/* ========== ПОСТІЙНІ КЛІЄНТИ ========== */
+.customers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+}
+
+.customers__item {
+  cursor: pointer;
+  -ms-flex-preferred-size: calc((100% - 30px) / 2);
+      flex-basis: calc((100% - 30px) / 2);
+}
+@media screen and (min-width: 768px) {
+  .customers__item {
+    -ms-flex-preferred-size: calc((100% - 60px) / 3);
+        flex-basis: calc((100% - 60px) / 3);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .customers__item {
+    -ms-flex-preferred-size: calc((100% - 150px) / 6);
+        flex-basis: calc((100% - 150px) / 6);
+  }
+}
+
+.customers__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 92px;
+  border: 1px solid var(--icons-grey);
+  border-radius: 4px;
+  color: var(--icons-grey);
+  -webkit-transition: color var(--transition), border var(--transition);
+  transition: color var(--transition), border var(--transition);
+}
+.customers__link:hover, .customers__link:focus {
+  color: var(--brand-main-color);
+  border: 1px solid var(--brand-main-color);
+}
+
+.customers__icon {
+  fill: currentColor;
+  width: 106px;
+  height: 60px;
+}
+
+/* ========== /ПОСТІЙНІ КЛІЄНТИ ========== */
+/* ========== ФІЛЬТР-КНОПКИ ========== */
+/* todo Мають бути Радіо-кнопки */
+.filter-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-column-gap: 8px;
+     -moz-column-gap: 8px;
+          column-gap: 8px;
+}
+@media screen and (max-width: 767px) {
+  .filter-btns {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    row-gap: 15px;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .filter-btns {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .filter-btns {
+    margin-bottom: 50px;
+  }
+}
+
+.filter-btns__btn {
+  padding: 6px 22px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  color: var(--brand-black);
+  background-color: var(--brand-bg-grey);
+  border: transparent;
+  border-radius: 4px;
+  -webkit-transition: color var(--transition), background-color var(--transition), -webkit-box-shadow var(--transition);
+  transition: color var(--transition), background-color var(--transition), -webkit-box-shadow var(--transition);
+  transition: color var(--transition), background-color var(--transition), box-shadow var(--transition);
+  transition: color var(--transition), background-color var(--transition), box-shadow var(--transition), -webkit-box-shadow var(--transition);
+}
+.filter-btns__btn:hover, .filter-btns__btn:focus {
+  color: var(--simple-white);
+  background-color: var(--brand-main-color);
+  -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* ========== /ФІЛЬТР-КНОПКИ ========== */
+/* ========== ЗРАЗКИ РОБІТ (КАРТКИ) ========== */
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .cards__item {
+    -ms-flex-preferred-size: calc((100% - 30px) / 2);
+        flex-basis: calc((100% - 30px) / 2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .cards__item {
+    -ms-flex-preferred-size: calc((100% - 60px) / 3);
+        flex-basis: calc((100% - 60px) / 3);
+  }
+}
+
+.cards__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  /* без цього не працює ховер. Чому? */
+  -webkit-transition: -webkit-box-shadow var(--transition);
+  transition: -webkit-box-shadow var(--transition);
+  transition: box-shadow var(--transition);
+  transition: box-shadow var(--transition), -webkit-box-shadow var(--transition);
+}
+.cards__link:hover, .cards__link:focus {
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+@media screen and (min-width: 768px) {
+  .cards__link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+  }
+}
+
+/* === Анімація по картці === */
+.cards__animation {
+  position: relative;
+  /* ховаємо все, що виходить за рамки елементу */
+  overflow: hidden;
+}
+.cards__animation::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0;
+  -webkit-transform: translate(0, 100%);
+          transform: translate(0, 100%);
+  -webkit-transition: opacity var(--transition), -webkit-transform var(--transition);
+  transition: opacity var(--transition), -webkit-transform var(--transition);
+  transition: transform var(--transition), opacity var(--transition);
+  transition: transform var(--transition), opacity var(--transition), -webkit-transform var(--transition);
+}
+
+/* === /Анімація по картці === */
+.cards__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  /* даємо тексту скролл, якщо буде переповнення контенту */
+  overflow: auto;
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--simple-white);
+  opacity: 0;
+  -webkit-transform: translate(0, 100%);
+          transform: translate(0, 100%);
+  -webkit-transition: opacity var(--transition), -webkit-transform var(--transition);
+  transition: opacity var(--transition), -webkit-transform var(--transition);
+  transition: transform var(--transition), opacity var(--transition);
+  transition: transform var(--transition), opacity var(--transition), -webkit-transform var(--transition);
+}
+
+.cards__info-box {
+  padding: 20px 24px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  /* У картках на сторінці Портфоліо є рамка (властивість border), але тільки у нижній частині картки. */
+  border-left: 1px solid #EEEEEE;
+  border-right: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.cards__title {
+  margin-bottom: 4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: var(--brand-black);
+}
+
+.cards__description {
+  font-size: 16px;
+  line-height: 1.88;
+  color: var(--brand-grey);
+}
+
+.cards__link:hover .cards__animation::before,
+.cards__link:focus .cards__animation::before,
+.cards__link:hover .cards__text,
+.cards__link:focus .cards__text {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+/* ========== /ЗРАЗКИ РОБІТ (КАРТКИ) ========== */
+/* ========== FOOTER ========== */
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: var(--brand-bg-color);
+}
+
+@media screen and (min-width: 768px) {
+  .container__footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    align-items: baseline;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .container__footer {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container__footer {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer__box:not(:last-child) {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer__box--contacts {
+    width: 231px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer__box--socials {
+    margin-left: 70px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .footer__box--subscribe {
+    margin-top: 60px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer__box--subscribe {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    margin-left: 93px;
+  }
+}
+
+.footer__logo {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.footer__title {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: var(--simple-white);
+}
+
+@media screen and (min-width: 1200px) {
+  .footer__btn {
+    margin: 0;
+    margin-left: 12px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .footer__subscribe-box {
+    margin-bottom: 20px;
+  }
+}
+
+.footer__subscribe-input {
+  height: 50px;
+  width: calc(100% - 30px);
+  padding: 15px 16px;
+  background-color: var(--brand-bg-color);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: var(--simple-white);
+}
+.footer__subscribe-input::-webkit-input-placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer__subscribe-input::-moz-placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer__subscribe-input:-ms-input-placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer__subscribe-input::-ms-input-placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer__subscribe-input::placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+}
+@media screen and (min-width: 768px) {
+  .footer__subscribe-input {
+    width: 450px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer__subscribe-input {
+    width: 358px;
+  }
+}
+
+.address {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.71;
+}
+
+.address__item:not(:last-child) {
+  margin-bottom: 8px;
+}
+@media screen and (min-with: 1200px) {
+  .address__item:not(:last-child) {
+    margin-bottom: 9px;
+  }
+}
+
+.address__link {
+  color: var(--simple-white);
+  -webkit-transition: color var(--transition);
+  transition: color var(--transition);
+  /* * «С5» Текст контактів в !хедері! і !футері! змінює колір при ховері і фокусі. */
+  /* .address__link--contact:hover,
+  .address__link--contact:focus, */
+}
+.address__link:hover, .address__link:focus {
+  color: var(--brand-main-color);
+}
+
+.address__link--contact {
+  color: rgba(255, 255, 255, 0.6);
+  /* transition: color var(--transition); */
+}
+
+/* ========== /FOOTER ========== */
+/* ========== МОДАЛЬНЕ ВІКНО ========== */
+/* Оверлей модального вікна */
+.backdrop {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-transition: opacity var(--transition), visibility var(--transition);
+  transition: opacity var(--transition), visibility var(--transition);
+  overflow-y: scroll;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  -webkit-transform: translate(-50%, -50%) scale(0.85);
+          transform: translate(-50%, -50%) scale(0.85);
+  -webkit-transition: visibility var(--transition), -webkit-transform var(--transition);
+  transition: visibility var(--transition), -webkit-transform var(--transition);
+  transition: transform var(--transition), visibility var(--transition);
+  transition: transform var(--transition), visibility var(--transition), -webkit-transform var(--transition);
+}
+
+/* /Оверлей модального вікна */
+/* Головне вікно */
+.modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  -webkit-transition: -webkit-transform var(--transition);
+  transition: -webkit-transform var(--transition);
+  transition: transform var(--transition);
+  transition: transform var(--transition), -webkit-transform var(--transition);
+  padding: 40px;
+  background-color: var(--simple-white);
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: calc(100vw - 30px);
+  margin: auto;
+  /* Заборона виділення текстуу, щоб не заважало користувачу */
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  /* Ширина модального вікна на різну ширину вьюпорту */
+}
+@media screen and (min-width: 480px) and (max-width: 1199px) {
+  .modal {
+    width: 450px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+  }
+}
+
+/* Заголовок модального вікна*/
+.modal__header {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--brand-black);
+}
+
+.modal__fields {
+  margin-bottom: 20px;
+}
+
+/* === Стилі полів ввведення інформацції === */
+.modal__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--brand-grey);
+  -webkit-transition: color var(--transition);
+  transition: color var(--transition);
+}
+.modal__label:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.modal__input-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  color: var(--brand-black);
+}
+
+.modal__text {
+  margin-bottom: 4px;
+}
+
+.modal__input {
+  padding: 12px 16px 12px 42px;
+  font-size: 16px;
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: rgba(33, 33, 33, 0.2);
+  -webkit-transition: border-color var(--transition);
+  transition: border-color var(--transition);
+}
+
+.modal__input:not(:-moz-placeholder-shown):required:invalid {
+  border-color: #f44336;
+  outline-width: 0;
+}
+
+.modal__input:not(:-ms-input-placeholder):required:invalid {
+  border-color: #f44336;
+  outline-width: 0;
+}
+
+.modal__input:not(:placeholder-shown):required:invalid {
+  border-color: #f44336;
+  outline-width: 0;
+}
+
+.modal__input--textarea {
+  padding-left: 16px;
+  height: 96px;
+}
+.modal__input--textarea::-webkit-input-placeholder {
+  color: rgba(117, 117, 117, 0.5);
+  font-size: 12px;
+  line-height: 1.167;
+}
+.modal__input--textarea::-moz-placeholder {
+  color: rgba(117, 117, 117, 0.5);
+  font-size: 12px;
+  line-height: 1.167;
+}
+.modal__input--textarea:-ms-input-placeholder {
+  color: rgba(117, 117, 117, 0.5);
+  font-size: 12px;
+  line-height: 1.167;
+}
+.modal__input--textarea::-ms-input-placeholder {
+  color: rgba(117, 117, 117, 0.5);
+  font-size: 12px;
+  line-height: 1.167;
+}
+.modal__input--textarea::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+  font-size: 12px;
+  line-height: 1.167;
+}
+
+/* Іконки на полях введення */
+.modal__icon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 12px;
+  fill: currentColor;
+}
+
+/* фарбуємо оутлайн полів вводу при ховері, фокусі і коли курсор у полі введення */
+.modal__label:focus .modal__input,
+.modal__input:focus-within {
+  border-color: var(--brand-main-color);
+  outline-width: 0;
+}
+
+/* фарбуємо іконки по ховеру і фокусу, а також коли курсор у полі введення */
+.modal__label:focus .modal__icon,
+.modal__label:focus-within .modal__icon {
+  color: var(--brand-main-color);
+}
+
+/* === /Стилі полів ввведення інформацції === */
+/* === Поле згоди з умовами === */
+/* Стилі для загального label */
+.agreement__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 30px;
+  color: transparent;
+  /* Змінюю колір тексту при ховері/фокусі */
+  /* Змінюю колір бордера іконки при ховері/фокусі */
+}
+.agreement__label:hover .agreement__text, .agreement__label:focus .agreement__text {
+  color: var(--brand-main-color);
+  /* outline: 1px solid var(--brand-main-color); */
+  /* border: 1px solid var(--brand-main-color); */
+  /* border-radius: 4px; */
+}
+.agreement__label:hover .agreement__icon, .agreement__label:focus .agreement__icon {
+  border-color: var(--brand-main-color);
+}
+
+/* стилі іконки чекбоксу за замовчуванням */
+.agreement__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 7px;
+  width: 16px;
+  height: 15px;
+  fill: currentColor;
+  border: 1px solid var(--brand-black);
+  border-radius: 4px;
+  -webkit-transition: border-color var(--transition);
+  transition: border-color var(--transition);
+}
+
+/* Стилі тексту "приймаю умови" */
+.agreement__text {
+  color: var(--brand-grey);
+  -webkit-transition: color var(--transition);
+  transition: color var(--transition);
+}
+@media screen and (max-width: 1199px) {
+  .agreement__text {
+    font-size: 12px;
+    line-height: 1.67;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .agreement__text {
+    font-size: 14px;
+    line-height: 1.71;
+  }
+}
+
+/* Додаткова стилізація посилання на "Умови договору" */
+.agreement__terms-link {
+  text-decoration: underline;
+  color: var(--brand-main-color);
+}
+
+/* Приховане поле input з type="checkbox" */
+/* Зміна стилю іконки чекбоксу при натисканні на .agreement  */
+.agreement__checkbox:checked + .agreement__icon {
+  /* background-origin: border-box; */
+  color: var(--brand-main-color);
+  background-color: var(--brand-main-color);
+  background-size: contain;
+  /* якщо не задати бордер=0, то іконка лишається зменшеною */
+  border: 0;
+}
+
+/* Малюю отулайн, бо інакше при фокусі через "TAB" фокусу не видно */
+.agreement__checkbox:focus + .agreement__icon {
+  outline: 1px solid var(--brand-black);
+}
+
+/* === варіант від Олексія Репіна: === */
+/* 
+.fake-checkbox::before {
+    height: 20px;
+    width: 20px;
+    border: 1px solid red;
+    display: block;
+    content: "";
+    cursor: pointer;
+    background-color: blue;
+}
+.agreement__checkbox:checked + .fake-checkbox::before {
+    background-color: aqua;
+}
+*/
+/* === /Поле згоди з умовами === */
+/* ========== /МОДАЛЬНЕ ВІКНО ========== *//*# sourceMappingURL=main.css.map */

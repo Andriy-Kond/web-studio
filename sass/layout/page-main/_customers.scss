@@ -1,0 +1,44 @@
+/* ========== ПОСТІЙНІ КЛІЄНТИ ========== */
+.customers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;   
+}
+
+.customers__item {
+    cursor: pointer;
+    flex-basis: calc((100% - 30px) / 2);
+
+    @media screen and (min-width: $tablet) {
+        flex-basis: calc((100% - 60px) / 3);
+    }
+    @media screen and (min-width: $desktop) {
+        flex-basis: calc((100% - 150px) / 6);
+    }
+}
+
+.customers__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92px;
+    border: 1px solid var(--icons-grey);
+    border-radius: 4px;
+    color: var(--icons-grey);
+    transition: color var(--transition),
+        border var(--transition);
+
+    &:hover,
+    &:focus {
+        color: var(--brand-main-color);
+        border: 1px solid var(--brand-main-color);
+    }
+}
+
+.customers__icon {
+    fill: currentColor;
+    width: 106px;
+    height: 60px;
+}
+/* ========== /ПОСТІЙНІ КЛІЄНТИ ========== */

@@ -1,0 +1,75 @@
+/* === Соціальні мережі === */
+.socials {
+    display: flex;
+    justify-content: center;
+}
+
+.socials__item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.socials__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+
+    color: var(--icons-grey);
+    background-color: var(--simple-white);
+    transition: background-color var(--transition),
+        color var(--transition);
+
+    &:hover,
+    &:focus {
+        background-color: var(--brand-main-color);
+        color: var(--simple-white);
+    }
+}
+
+.socials__icon {
+    fill: currentColor;
+    width: 20px;
+    height: 20px;
+}
+
+.socials__link--footer-colorize {
+    color: var(--simple-white);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.socials-mobile-menu {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
+}
+
+.socials-mobile-menu__item:not(:last-child) {
+    margin-right: 10px;
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+    padding-right: 10px;
+}
+
+.socials-mobile-menu__link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+
+    color: var(--icons-grey);
+
+    transition: color var(--transition);
+    color: var(--brand-main-color);
+}
+
+.socials-mobile-menu__vertical-line {
+    width: 0;
+    display: flex;
+    margin-left: 10px;
+}
+
+
+/* === /Соціальні мережі === */

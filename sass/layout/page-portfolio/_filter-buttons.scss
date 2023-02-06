@@ -1,0 +1,49 @@
+/* ========== ФІЛЬТР-КНОПКИ ========== */
+/* todo Мають бути Радіо-кнопки */
+// Розміщення кнопок в ріних вьюпортах
+.filter-btns {
+    display: flex;
+    user-select: none;
+    column-gap: 8px;
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        flex-wrap: wrap;
+        row-gap: 15px;
+        margin-bottom: 40px;
+    }
+
+    @media screen and (min-width: $tablet) {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 50px;
+    }
+}
+
+// Стилі кнопок для фільтру
+.filter-btns__btn {
+    padding: 6px 22px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.62;
+    color: var(--brand-black);
+    background-color: var(--brand-bg-grey);
+    border: transparent;
+    border-radius: 4px;
+
+    transition: color var(--transition),
+        background-color var(--transition),
+        box-shadow var(--transition);
+
+    &:hover,
+    &:focus {
+        color: var(--simple-white);
+        background-color: var(--brand-main-color);
+        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+            0px 1px 2px rgba(0, 0, 0, 0.08),
+            0px 2px 2px rgba(0, 0, 0, 0.12);
+    }
+}
+/* ========== /ФІЛЬТР-КНОПКИ ========== */

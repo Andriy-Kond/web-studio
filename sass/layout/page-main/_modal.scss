@@ -1,0 +1,267 @@
+/* ========== МОДАЛЬНЕ ВІКНО ========== */
+
+/* Оверлей модального вікна */
+.backdrop {
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    transition: opacity var(--transition),
+        visibility var(--transition);
+    overflow-y: scroll;
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.85);
+    transition: transform var(--transition),
+        visibility var(--transition);
+}
+
+/* /Оверлей модального вікна */
+
+/* Головне вікно */
+.modal {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform var(--transition);
+
+    padding: 40px;
+    background-color: var(--simple-white);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    width: calc(100vw - 30px);
+    margin: auto;
+
+    /* Заборона виділення текстуу, щоб не заважало користувачу */
+    user-select: none;
+
+    /* Ширина модального вікна на різну ширину вьюпорту */
+    @media screen and (min-width: $mobile) and (max-width: ($desktop - 1px)) {
+        width: 450px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 528px;
+    }
+}
+
+/* Заголовок модального вікна*/
+.modal__header {
+    display: block;
+    margin-bottom: 12px;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--brand-black);
+}
+
+.modal__fields {
+    margin-bottom: 20px;
+}
+
+/* === Стилі полів ввведення інформацції === */
+.modal__label {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: var(--brand-grey);
+    transition: color var(--transition);
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+.modal__input-box {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    color: var(--brand-black);
+}
+
+.modal__text {
+    margin-bottom: 4px;
+}
+
+.modal__input {
+    padding: 12px 16px 12px 42px;
+
+    font-size: 16px;
+
+    border: 1px solid;
+    border-radius: 4px;
+    border-color: rgba(33, 33, 33, 0.2);
+
+    transition: border-color var(--transition);
+}
+
+// Для обов'язкових полів, якщо вже введенні значення не вірні бордер буде червоним
+.modal__input:not(:placeholder-shown):required:invalid {
+    border-color: #f44336;
+    outline-width: 0;
+    // outline-color: #f44336;
+}
+
+.modal__input--textarea {
+    padding-left: 16px;
+    height: 96px;
+
+    &::placeholder {
+        color: rgba(117, 117, 117, 0.5);
+        font-size: 12px;
+        line-height: 1.167;
+    }
+}
+
+/* Іконки на полях введення */
+.modal__icon {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+
+    fill: currentColor;
+}
+
+/* фарбуємо оутлайн полів вводу при ховері, фокусі і коли курсор у полі введення */
+// .modal__label:hover .modal__input,
+.modal__label:focus .modal__input,
+.modal__input:focus-within {
+    border-color: var(--brand-main-color);
+    outline-width: 0;
+    // outline-color: var(--brand-main-color);
+}
+
+/* фарбуємо іконки по ховеру і фокусу, а також коли курсор у полі введення */
+// .modal__label:hover .modal__icon,
+.modal__label:focus .modal__icon,
+.modal__label:focus-within .modal__icon {
+    color: var(--brand-main-color);
+    // fill: var(--brand-main-color); 
+}
+
+/* === /Стилі полів ввведення інформацції === */
+
+/* === Поле згоди з умовами === */
+/* Стилі для загального label */
+.agreement__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    color: transparent;
+
+    /* Змінюю колір тексту при ховері/фокусі */
+    &:hover .agreement__text,
+    &:focus .agreement__text {
+        color: var(--brand-main-color);
+        /* outline: 1px solid var(--brand-main-color); */
+        /* border: 1px solid var(--brand-main-color); */
+        /* border-radius: 4px; */
+    }
+
+    /* Змінюю колір бордера іконки при ховері/фокусі */
+    &:hover .agreement__icon,
+    &:focus .agreement__icon {
+        border-color: var(--brand-main-color);
+    }
+}
+
+/* стилі іконки чекбоксу за замовчуванням */
+.agreement__icon {
+    display: flex;
+    align-items: center;
+    margin-right: 7px;
+    width: 16px;
+    height: 15px;
+
+    fill: currentColor;
+    border: 1px solid var(--brand-black);
+    border-radius: 4px;
+    transition: border-color var(--transition);
+}
+
+/* Стилі тексту "приймаю умови" */
+.agreement__text {
+    color: var(--brand-grey);
+    transition: color var(--transition);
+
+    @media screen and (max-width: ($desktop - 1px)) {
+        font-size: 12px;
+        line-height: 1.67;
+    }
+
+    @media screen and (min-width: $desktop) {
+        font-size: 14px;
+        line-height: 1.71;
+    }
+}
+
+/* Додаткова стилізація посилання на "Умови договору" */
+.agreement__terms-link {
+    text-decoration: underline;
+    color: var(--brand-main-color);
+}
+
+/* Приховане поле input з type="checkbox" */
+/* Зміна стилю іконки чекбоксу при натисканні на .agreement  */
+.agreement__checkbox:checked+.agreement__icon {
+    /* background-origin: border-box; */
+    color: var(--brand-main-color);
+
+    background-color: var(--brand-main-color);
+    background-size: contain;
+
+    /* якщо не задати бордер=0, то іконка лишається зменшеною */
+    border: 0;
+}
+
+/* Малюю отулайн, бо інакше при фокусі через "TAB" фокусу не видно */
+.agreement__checkbox:focus+.agreement__icon {
+    outline: 1px solid var(--brand-black);
+}
+
+
+/* === варіант від Олексія Репіна: === */
+/* 
+.fake-checkbox::before {
+    height: 20px;
+    width: 20px;
+    border: 1px solid red;
+    display: block;
+    content: "";
+    cursor: pointer;
+    background-color: blue;
+}
+.agreement__checkbox:checked + .fake-checkbox::before {
+    background-color: aqua;
+}
+*/
+
+/* === /Поле згоди з умовами === */
+/* ========== /МОДАЛЬНЕ ВІКНО ========== */

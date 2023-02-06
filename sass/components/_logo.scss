@@ -1,0 +1,25 @@
+/* /Стилізація logo */
+.logo {
+    display: block;
+
+    font-family: var(--brand-logo-font), sans-serif;
+    font-weight: 700;
+    color: var(--brand-main-color);
+    font-size: 24px;
+    line-height: 1.16;
+    
+    @media screen and (min-width: $desktop) {
+            font-size: 26px;
+            line-height: 1.19;
+        }
+}
+
+.logo__dark {
+    color: var(--logo-positive-color);
+}
+
+.logo__light {
+    color: var(--logo-negative-color);
+}
+/* /Стилізація logo */
+

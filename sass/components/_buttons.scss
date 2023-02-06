@@ -1,0 +1,113 @@
+/* === Кнопка основна === */
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+    width: calc(100vw - 30px);
+    max-width: 200px;
+    height: 50px;
+    
+    padding: 10px;
+    border-radius: 4px;
+    border: transparent;
+
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    
+    color: var(--simple-white);
+    background-color: var(--brand-main-color);
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    transition: background-color var(--transition);
+    
+    &:hover,
+    &:focus {
+        background-color: var(--btn-hover-color);
+    }
+}
+.btn__subscribe-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    margin-left: 10px;
+}
+/* === /Кнопка основна === */
+
+/* === Кнопка закриття зверху праворуч === */
+.btn-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--simple-white);
+
+    transition: background-color var(--transition),
+        color var(--transition);
+    &:hover,
+    &:focus {
+        color: var(--brand-main-color);
+    }
+}
+
+.btn-close__icon {
+    fill: currentColor;
+    width: 18px;
+    height: 18px;
+    background-position: 50% 50%;
+    background-origin: border-box;
+}
+
+// Кнопка меню при екрані $mobile: 480px;
+.btn-mobile {
+    z-index: 2;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    display: flex;
+    padding: 0;
+    border: 0;
+
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
+}
+
+.btn-mobile.is-open {
+    position: absolute;
+    // right: calc(40px + (100vw - 40px - 480px)/2);
+    right: max(15px, calc((100vw - $mobile) / 2 + 15px));
+}
+
+.btn-mobile .icon-close {
+    display: none;
+}
+
+.btn-mobile.is-open .icon-close {
+    display: block;
+}
+
+.btn-mobile.is-open .icon-open {
+    display: none;
+}
+
+.btn-mobile__icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--simple-white);
+}
+
+
+/* === /Кнопка закриття зверху праворуч === */

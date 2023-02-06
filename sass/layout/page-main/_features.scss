@@ -1,0 +1,59 @@
+/* ========== ОСОБЛИВОСТІ ========== */
+.features {
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}
+
+.features__item {
+    @media screen and (max-width: ($tablet - 1px)) {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    @media screen and (min-width: $tablet) {
+        flex-basis: calc((100% - 30px) / 2);
+    }
+
+    @media screen and (min-width: $desktop) {
+        flex-basis: calc((100% - 90px) / 4);
+    }
+}
+
+.features__icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 30px;
+    background-color: var(--brand-bg-grey);
+    height: 120px;
+}
+
+.features__icon {
+    height: 70px;
+    width: 70px;
+}
+
+.features__title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--brand-black);
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        text-align: center;
+    }
+}
+
+.features__text {
+    font-size: 14px;
+    line-height: 1.71;
+    color: var(--brand-grey);
+}
+/* ========== /ОСОБЛИВОСТІ ========== */

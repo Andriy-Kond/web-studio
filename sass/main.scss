@@ -1,0 +1,39 @@
+/* todo переробити іконки, щоб вони автоматично стискались між собою на маленьких екранах */
+/* todo Мають бути Радіо-кнопки */
+/* todo автофокус на полі у подалці - через JS*/
+
+// Змінні
+@import "./utils/variables";
+@import "./utils/breakpoints";
+// Нормалізація стилів
+@import "./base/modern-normalize";
+@import "./base/project-normalize";
+
+
+// Загальні компоненти
+@import "./components/buttons";
+@import "./components/container";
+@import "./components/section";
+@import "./components/hidden";
+@import "./components/logo";
+@import "./components/socials";
+
+// Капелюх
+@import "./layout/header";
+
+// Головна сторінка 
+@import "./layout/page-main/hero";
+@import "./layout/page-main/features";
+@import "./layout/page-main/offers";
+@import "./layout/page-main/team";
+@import "./layout/page-main/customers";
+
+// Сторінка Portfolio
+@import "./layout/page-portfolio/filter-buttons";
+@import "./layout/page-portfolio/cards";
+
+// Нижній колонтитул
+@import "./layout/footer";
+
+// Модальне вікно
+@import "./layout/page-main/modal";
